@@ -1,0 +1,104 @@
+package com.devilsoftware.healthy.activities;
+
+import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
+import android.widget.Toast;
+
+import com.devilsoftware.healthy.R;
+import com.devilsoftware.healthy.views.ApplyFragmentLevel;
+import com.devilsoftware.healthy.views.FindFragment;
+import com.devilsoftware.healthy.views.MainFragment;
+import com.devilsoftware.healthy.views.RegistrationFragment;
+import com.devilsoftware.healthy.views.SearchOrgFragment;
+
+public class MainActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener {
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.activity_main);
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        /*
+        findViewById(R.id.admin).setOnClickListener(new View.OnClickListener() {
+
+            int i;
+
+            @Override
+            public void onClick(View v) {
+                i++;
+
+                if (i>5){
+
+                }
+            }
+        });
+        */
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.container, new MainFragment());
+        fragmentTransaction.commit();
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+
+
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
+
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+
+        if (id == R.id.nav_reg) {
+            fragmentTransaction.replace(R.id.container, new RegistrationFragment());
+            fragmentTransaction.commit();
+        } else if(id == R.id.nav_apply) {
+            fragmentTransaction.replace(R.id.container, new ApplyFragmentLevel());
+            fragmentTransaction.commit();
+        } else if(id == R.id.nav_first_help) {
+            fragmentTransaction.replace(R.id.container, new MainFragment());
+            fragmentTransaction.commit();
+        } else if(id == R.id.nav_info) {
+            fragmentTransaction.replace(R.id.container, new FindFragment());
+            fragmentTransaction.commit();
+        } else if (id == R.id.nav_map) {
+            fragmentTransaction.replace(R.id.container, new SearchOrgFragment());
+            fragmentTransaction.commit();
+        }
+
+        if(id == R.id.nav_admin) {
+            Toast.makeText(MainActivity.this, "admin", Toast.LENGTH_LONG).show();
+            Bundle bundle = new Bundle();
+            bundle.putInt("admin",1);
+            ApplyFragmentLevel applyFragmentLevel = new ApplyFragmentLevel();
+            applyFragmentLevel.setArguments(bundle);
+            fragmentTransaction.replace(R.id.container, applyFragmentLevel);
+            fragmentTransaction.commit();
+        }
+
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+}

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group
+        android:id="@+id/menu_top"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_first_help"
+            android:icon="@drawable/ic_menu_first"
+            android:title="Первая помощь"/>
+
+        <item
+            android:id="@+id/nav_info"
+            android:icon="@drawable/ic_menu_info"
+            android:title="Энциклопедия болезней"/>
+        <item
+            android:id="@+id/nav_apply"
+            android:icon="@drawable/ic_menu_apply"
+            android:title="Определение болезней"/>
+        <item
+            android:id="@+id/nav_reg"
+            android:icon="@drawable/ic_menu_me"
+            android:title="Мои данные" />
+    </group>
+
+    <group
+        android:id="@+id/menu_bottom"
+        android:checkableBehavior="none">
+
+        <item
+            android:id="@+id/nav_admin"
+            android:icon="@drawable/ic_menu_info"
+            android:title="admin"/>
+
+        <item
+            android:id="@+id/nav_map"
+            android:icon="@drawable/ic_menu_map"
+            android:title="Ближайшие аптеки" />
+        <item
+            android:id="@+id/nav_call"
+            android:icon="@drawable/ic_menu_call"
+            android:title="Позвонить в поликлинику" />
+
+    </group>
+
+
+</menu>
