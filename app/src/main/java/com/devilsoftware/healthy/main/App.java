@@ -9,7 +9,7 @@ import com.devilsoftware.healthy.main.API.APIService;
 
 public class App extends Application {
 
-    public static String URL = "192.168.43.148:8080";
+    public static String URL = "10.240.18.158:8080";
 
     static APIService mAPIService = new APIService();
     static Context mContext;

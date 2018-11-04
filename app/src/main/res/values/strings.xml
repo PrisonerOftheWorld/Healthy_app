@@ -1,21 +1,6 @@
 <resources>
     <string name="app_name">Healthy</string>
-    <string name="title_activity_main2">Main2Activity</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">maksim.prygunov@gmail.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
-    <string-array name="main_regions">
-        <item>Голова</item>
-        <item>Туловище</item>
-        <item>Руки</item>
-        <item>Ноги</item>
-        <item>Кожа</item>
-        <item>Волосы</item>
-    </string-array>
-    <string name="title_activity_illness">IllnessActivity</string>
     <string name="large_text">
 
         Индекс массы тела — ИМТ (англ. body mass index (BMI)) — величина, с помощью которой измеряют, на сколько вес человека соответствует его росту. И на основе результатов косвенно оценить, является ли масса недостаточной, нормальной или избыточной (ожирение). Это помогает понять, необходимо ли человеку лечение и целесообразно ли в его ситуации применять специальные препараты.
@@ -67,11 +52,16 @@
 
     </string>
     <string-array name="options">
-        <item>Позвонить</item>
-        <item>Перейти на сайт</item>
+        <item>Call</item>
+        <item>Go to the site</item>
     </string-array>
-    <string name="title_activity_result">ResultActivity</string>
-    <string name="title_activity_maps">Map</string>
     <string name="image_to_preview_the_article">image to preview the article</string>
+    <string name="first_help">First help</string>
+    <string name="info">More illnesses</string>
+    <string name="detect">Detect illnesses</string>
+    <string name="my_data">My information</string>
+    <string name="around">Around pharmacy</string>
+    <string name="call">Call to the hospital</string>
+    <string name="strike">Strike</string>
 
 </resources>

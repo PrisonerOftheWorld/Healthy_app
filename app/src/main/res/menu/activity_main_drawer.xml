@@ -9,20 +9,20 @@
         <item
             android:id="@+id/nav_first_help"
             android:icon="@drawable/ic_menu_first"
-            android:title="Первая помощь"/>
+            android:title="@string/first_help"/>
 
         <item
             android:id="@+id/nav_info"
             android:icon="@drawable/ic_menu_info"
-            android:title="Энциклопедия болезней"/>
+            android:title="@string/info"/>
         <item
             android:id="@+id/nav_apply"
             android:icon="@drawable/ic_menu_apply"
-            android:title="Определение болезней"/>
+            android:title="@string/detect"/>
         <item
             android:id="@+id/nav_reg"
             android:icon="@drawable/ic_menu_me"
-            android:title="Мои данные" />
+            android:title="@string/my_data" />
     </group>
 
     <group
@@ -30,18 +30,13 @@
         android:checkableBehavior="none">
 
         <item
-            android:id="@+id/nav_admin"
-            android:icon="@drawable/ic_menu_info"
-            android:title="admin"/>
-
-        <item
             android:id="@+id/nav_map"
             android:icon="@drawable/ic_menu_map"
-            android:title="Ближайшие аптеки" />
+            android:title="@string/around" />
         <item
             android:id="@+id/nav_call"
             android:icon="@drawable/ic_menu_call"
-            android:title="Позвонить в поликлинику" />
+            android:title="@string/call" />
 
     </group>
 

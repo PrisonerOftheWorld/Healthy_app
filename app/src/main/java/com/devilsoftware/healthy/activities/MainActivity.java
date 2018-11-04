@@ -1,5 +1,7 @@
 package com.devilsoftware.healthy.activities;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.design.widget.NavigationView;
@@ -28,21 +30,8 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        /*
-        findViewById(R.id.admin).setOnClickListener(new View.OnClickListener() {
+        Toast.makeText(this, "Подключитесь к сети Innopolis, пароль: Innopolis",Toast.LENGTH_LONG).show();
 
-            int i;
-
-            @Override
-            public void onClick(View v) {
-                i++;
-
-                if (i>5){
-
-                }
-            }
-        });
-        */
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.container, new MainFragment());
         fragmentTransaction.commit();
@@ -84,19 +73,11 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_map) {
             fragmentTransaction.replace(R.id.container, new SearchOrgFragment());
             fragmentTransaction.commit();
+        } else if (id == R.id.nav_call){
+            String phone = "112";
+            Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null));
+            startActivity(intent);
         }
-
-        if(id == R.id.nav_admin) {
-            Toast.makeText(MainActivity.this, "admin", Toast.LENGTH_LONG).show();
-            Bundle bundle = new Bundle();
-            bundle.putInt("admin",1);
-            ApplyFragmentLevel applyFragmentLevel = new ApplyFragmentLevel();
-            applyFragmentLevel.setArguments(bundle);
-            fragmentTransaction.replace(R.id.container, applyFragmentLevel);
-            fragmentTransaction.commit();
-        }
-
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
