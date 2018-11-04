@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="options">
+    <item>Позвонить</item>
+    <item>Перейти на сайт</item>
+</string-array>
+    <string name="first_help">Первая помощь</string>
+    <string name="info">Энциклопедия болезней</string>
+    <string name="detect">Определение болезней</string>
+    <string name="my_data">Мои данные</string>
+    <string name="around">Ближайшие аптеки</string>
+    <string name="call">Позвонить в поликлинику</string>
+</resources>
